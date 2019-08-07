@@ -1,2 +1,7 @@
 Library
 Temp
+/Assembly-CSharp.csproj
+/Assembly-CSharp-Editor.csproj
+/VoidFramework.sln
+.vs
+obj
