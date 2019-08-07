@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Xml.Serialization;
 
-[System.Serializable]
-public class TestSerialize {
+namespace Test20190807 {
 
-    [XmlAttribute("Id")]
-    public int Id { get; set; }
+    [System.Serializable]
+    public class TestSerialize {
 
-    [XmlAttribute("Name")]
-    public string Name { get; set; }
+        [XmlAttribute("Id")]
+        public int Id { get; set; }
 
-    [XmlElement("List")]
-    public List<int> List { get; set; }
+        [XmlAttribute("Name")]
+        public string Name { get; set; }
+
+        [XmlElement("List")]
+        public List<int> List { get; set; }
+    }
 }
