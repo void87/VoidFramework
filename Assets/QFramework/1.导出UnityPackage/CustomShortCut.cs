@@ -12,9 +12,11 @@ namespace QFramework {
     public class CustomShortCut {
 
 #if UNITY_EDITOR
-        [MenuItem("QFramework/7.自定义快捷键 %e")]
+
+        [MenuItem("QFramework/1.导出UnityPackage %e", false, -10)]
         private static void MenuClicked() {
-            EditorApplication.ExecuteMenuItem("QFramework/6.MenuItem复用");
+            Exporter.ExportPakcage("Assets/QFramework", Exporter.GenerateUnityPackageName() + ".unitypackage");
+            EditorUtil.OpenInFolder(Path.Combine(Application.dataPath, "../"));
         }
 #endif
     }

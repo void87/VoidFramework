@@ -5,19 +5,27 @@ using UnityEditor;
 
 namespace QFramework {
 
-    public class TransformPosSimplify {
+    public class TransformSimplify {
 
 #if UNITY_EDITOR
 
-        [MenuItem("QFramework/10. Transform 位置简化")]
+        [MenuItem("QFramework/10. Transform API 简化")]
         static void MenuClicked() {
             GameObject gameObject = new GameObject();
             SetLocalPosX(gameObject.transform, 5.0f);
             SetLocalPosY(gameObject.transform, 5.0f);
             SetLocalPosZ(gameObject.transform, 5.0f);
+
+            Identity(gameObject.transform);
         }
 
 #endif
+
+        public static void Identity(Transform transform) {
+            transform.localPosition = Vector3.zero;
+            transform.localScale = Vector3.one;
+            transform.localRotation = Quaternion.identity;
+        }
 
         public static void SetLocalPosX(Transform transform, float x) {
             var localPos = transform.localPosition;
