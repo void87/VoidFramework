@@ -1,21 +1,61 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-#if UNITY_EDITOR
 using UnityEditor;
-#endif
-using System;
 
 namespace QFramework {
 
-    public class GeneratePackageName {
+    public class TransformPosSimplify {
 
 #if UNITY_EDITOR
-        [MenuItem("QFramework/1.生成 UnityPackage 名字")]
-#endif
+
+        [MenuItem("QFramework/10. Transform 位置简化")]
         static void MenuClicked() {
-            Debug.Log("QFramework_" + DateTime.Now.ToString("yyyyMMdd_HH"));
+            GameObject gameObject = new GameObject();
+            SetLocalPosX(gameObject.transform, 5.0f);
+            SetLocalPosY(gameObject.transform, 5.0f);
+            SetLocalPosZ(gameObject.transform, 5.0f);
+        }
+
+#endif
+
+        public static void SetLocalPosX(Transform transform, float x) {
+            var localPos = transform.localPosition;
+            localPos.x = x;
+            transform.localPosition = localPos;
+        }
+
+        public static void SetLocalPosY(Transform transform, float y) {
+            var localPos = transform.localPosition;
+            localPos.y = y;
+            transform.localPosition = localPos;
+        }
+
+        public static void SetLocalPosZ(Transform transform, float z) {
+            var localPos = transform.localPosition;
+            localPos.z = z;
+            transform.localPosition = localPos;
+        }
+
+        public static void SetLocalPosXY(Transform transform, float x, float y) {
+            var localPos = transform.localPosition;
+            localPos.x = x;
+            localPos.y = y;
+            transform.localPosition = localPos;
+        }
+
+        public static void SetLocalPosXZ(Transform transform, float x, float z) {
+            var localPos = transform.localPosition;
+            localPos.x = x;
+            localPos.z = z;
+            transform.localPosition = localPos;
+        }
+
+        public static void SetLocalPosYZ(Transform transform, float y, float z) {
+            var localPos = transform.localPosition;
+            localPos.y = y;
+            localPos.z = z;
+            transform.localPosition = localPos;
         }
     }
-
 }
