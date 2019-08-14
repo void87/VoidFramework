@@ -12,18 +12,18 @@ namespace QFramework
 
             new GameObject().AddComponent<DelayWithCoroutine>();
         }
-
+#endif
+        
         protected override void OnBeforeDestroy()
         {
         }
-#endif
 
         void Start()
         {
             Delay(5.0f, () =>
             {
                 Debug.Log(" 5 s 之后");
-                Hide();
+                this.Hide();
             });
         }
     }

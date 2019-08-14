@@ -2,33 +2,23 @@
 
 namespace QFramework
 {
-    public class AudioManager : MonoBehaviour
+    public class AudioManager : MonoSingleton<AudioManager>
     {
-        private static AudioManager mInstance;
-
-        public static AudioManager Instance
-        {
-            get
-            {
-                if (!mInstance)
-                {
-                    mInstance = new GameObject("AudioManager").AddComponent<AudioManager>();
-                }
-
-                return mInstance;
-            }
-        }
-
         private AudioListener mAudioListener;
 
         void CheckAudioListener()
         {
             if (!mAudioListener)
             {
+                mAudioListener = FindObjectOfType<AudioListener>();
+            }
+
+            if (!mAudioListener)
+            {
                 mAudioListener = gameObject.AddComponent<AudioListener>();
             }
         }
-
+   
         public void PlaySound(string soundName)
         {
             CheckAudioListener();

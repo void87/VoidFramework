@@ -12,16 +12,16 @@ namespace QFramework
         {
             GameObject gameObject = new GameObject();
 
-            TransformSimplify.SetLocalPosX(gameObject.transform, 5.0f);
-            TransformSimplify.SetLocalPosY(gameObject.transform, 5.0f);
-            TransformSimplify.SetLocalPosZ(gameObject.transform, 5.0f);
+            gameObject.transform.SetLocalPosX(5.0f);
+            gameObject.transform.SetLocalPosY(5.0f);
+            gameObject.transform.SetLocalPosZ(5.0f);
 
-            TransformSimplify.Identity(gameObject.transform);
+            gameObject.transform.Identity();
 
             var parentTrans = new GameObject("ParentTransform").transform;
             var childTrans = new GameObject("ChildTransform").transform;
 
-            TransformSimplify.AddChild(parentTrans, childTrans);
+            parentTrans.AddChild(childTrans);
         }
     }
 }

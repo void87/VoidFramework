@@ -14,11 +14,10 @@ namespace QFramework
 
             new GameObject("AudioExample").AddComponent<AudioExample>();
         }
-
+#endif
         protected override void OnBeforeDestroy()
         {
         }
-#endif
 
         private void Start()
         {

@@ -6,7 +6,7 @@ namespace QFramework
     {
         private void Awake()
         {
-            Hide();
+            this.Hide();
         }
 
         protected override void OnBeforeDestroy()

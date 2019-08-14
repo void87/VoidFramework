@@ -7,26 +7,6 @@ namespace QFramework
 {
     public abstract partial class MonoBehaviourSimplify : MonoBehaviour
     {
-        #region GameObjectSimplify
-        public void Show()
-        {
-            GameObjectSimplify.Show(gameObject);
-        }
-
-        public void Hide()
-        {
-            GameObjectSimplify.Hide(gameObject);
-        }
-
-        #endregion
-
-        #region TransformSimplify
-        public void Identity()
-        {
-            TransformSimplify.Identity(transform);
-        }
-        #endregion
-
         #region Delay
         public void Delay(float seconds, Action onFinished)
         {
